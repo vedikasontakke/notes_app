@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // even the whole app itself is just a widget
 
 // starting point of main fun
+//todo :- learn about this arrow function in Data
 void main() => runApp(App());
 
 //  widgets whose state can not be altered once they are built
@@ -21,6 +22,9 @@ class App extends StatelessWidget {
 ///  When flutter wants to update a widget, it will rebuild the entire widget.
 ///  To save state we would need two classes, one for the widget itself and one which creates the state.
 
+//todo learn about abstract class and interface and really in details
+//find why after extending the class we need to override its method
+//if know this pls write in comments
 // stateful => can be modify(muttable)
 class TodoList extends StatefulWidget {
   @override
@@ -95,43 +99,5 @@ class _TodoListState extends State<TodoList> {
     },
     );
   }
-*/
-
-  //Add the elements of the todoList into the list of todoWidgets
-  List<Widget> _getItems()
-  {
-    final List<Widget> _todoWidgets = <Widget>[];
-    for (String title in _todoList) {
-      _todoWidgets.add(_buildTodoItem(title));
-    }
-    return _todoWidgets;
-  }
-
-  void _displayDialog(BuildContext context)
-  {
-    var alertDialog = AlertDialog(
-      title: const Text('Add a task to your list'),
-      content: TextField(
-        controller: _textFieldController,
-        decoration: const InputDecoration(hintText: 'Enter task here'),
-      ),
-      actions: <Widget>[
-        FlatButton(
-          child: const Text('ADD'),
-          onPressed: () {
-            Navigator.of(context).pop();
-            _addTodoItem(_textFieldController.text);
-          },
-        ),
-        FlatButton(
-          child: const Text('CANCEL'),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        )
-      ],
-    );
-
-    showDialog(context: context, builder: (BuildContext context) => alertDialog);
-  }
 }
+
