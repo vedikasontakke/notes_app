@@ -67,9 +67,9 @@ class _TodoListState extends State<TodoList> {
     return ListTile(title: Text(title));
   }
 
-  /* // Generate a single item widget
-  Future<AlertDialog> _displayDialog(BuildContext context)  {
-   return showDialog? (
+  // Generate a single item widget
+  _displayDialog(BuildContext context)  {
+   return showDialog(
         context:  context,
         builder: (BuildContext context)
 
@@ -81,6 +81,7 @@ class _TodoListState extends State<TodoList> {
           decoration: const InputDecoration(hintText: 'Enter task here'),
         ),
         actions: <Widget>[
+          //todo :- Flat button is depredated fine replacement
           FlatButton(
             child: const Text('ADD'),
             onPressed: () {
@@ -97,7 +98,7 @@ class _TodoListState extends State<TodoList> {
         ],
       ),
     },
-    );
+    )
   }
 }
 
